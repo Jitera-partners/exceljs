@@ -18,7 +18,13 @@ describe('github issues: Date field with cache style', () => {
         );
         workbookReader.read();
         workbookReader.on('worksheet', worksheet =>
-          worksheet.on('row', row => rows.push(row.values[1]))
+          worksheet.on('row', row => {
+            if (row.values[1] instanceof Date) {
+              rows.push(row.values[1]);
+            } else {
+              rows.push(row.values[1].text || row.values[1]);
+            }
+          })
         );
         workbookReader.on('end', resolve);
         workbookReader.on('error', reject);
