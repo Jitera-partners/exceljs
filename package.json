@@ -98,6 +98,7 @@
   "dependencies": {
     "archiver": "^5.0.0",
     "dayjs": "^1.8.34",
+    "exceljs": "git+https://github.com/Jitera-partners/exceljs.git",
     "fast-csv": "^4.3.1",
     "jszip": "^3.10.1",
     "readable-stream": "^3.6.0",
